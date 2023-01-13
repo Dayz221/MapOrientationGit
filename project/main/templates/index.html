@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block headers %}
+    <link rel="stylesheet" href="{% static 'css/indexStyle.css' %}">
+    <script src="{% static 'js/indexScript.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="app">
+        <div class="title">Соревнование по ориентированию на местности</div>
+        <button class="button" onclick="open_popup('#new_group')">Создать группу</button>
+        <button class="button" onclick="open_popup('#join_group')">Присоедениться к группе</button>
+    </div>
+    <div class="popup_container disable" id="new_group">
+        <div class="popup_upper">
+            <div class="popup_title">Создать группу</div>
+            <div class="popup_exit" onclick="exit_popup(this)"></div>
+        </div>
+        <div class="popup_content">
+            <input type="text" class="popup_itext" name="group_name" placeholder="Название группы" oninput="popup_input(this)">
+            <input type="text" class="popup_itext" name="card_id" placeholder="ID карточки" oninput="popup_input(this)">
+            <button class="popup_isubmit" onclick="create_group(this)">Зарегестрировать</button>
+            <div class="error disable"></div>
+        </div>
+    </div>
+    <div class="popup_container disable" id="join_group">
+        <div class="popup_upper">
+            <div class="popup_title">Вступить в группу</div>
+            <div class="popup_exit" onclick="exit_popup(this)"></div>
+        </div>
+        <div class="popup_content">
+            <input type="text" class="popup_itext" name="group_name" placeholder="Название группы" oninput="popup_input(this)">
+            <button class="popup_isubmit" onclick="join_group(this)">Вступить</button>
+            <div class="error disable"></div>
+        </div>
+    </div>
+{% endblock %}

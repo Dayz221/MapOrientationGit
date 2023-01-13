@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    position: relative;
+}
+
+.button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    appearance: none;
+    border: 1px solid rgb(50, 50, 50);
+    color: rgb(50, 50, 50);
+    border-radius: 5px;
+    background-color: rgb(230, 230, 230);
+    transition: all .3s;
+}
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(36,172,242);
+    color: white;
+    border-color: rgb(36,172,242);
+}
+
+.popup_container {
+    width: 260px;
+    padding: 15px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 6px;
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, .2);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 150px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.popup_exit {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.popup_exit::before,
+.popup_exit::after {
+	content: '';
+	position: absolute;
+	top: 10px;
+	display: block;
+	width: 20px;
+	height: 3px;
+	background: rgb(50, 50, 50);
+}
+.popup_exit::before {
+	transform: rotate(45deg);
+}
+.popup_exit::after {
+	transform: rotate(-45deg);
+}
+.popup_title {
+    text-align: start;
+    font-size: 21px;
+    margin-bottom: 20px;
+    color: rgb(50, 50, 50);
+}
+.popup_itext {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    appearance: none;
+    border: 1px solid rgb(50, 50, 50);
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 12px;
+    background-color: inherit;
+    outline: none;
+    transition: all .3s;
+}
+.popup_itext:focus {
+    border: 1px solid rgb(36,172,242);
+}
+.popup_isubmit {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid rgb(50, 50, 50);
+    color: rgb(50, 50, 50);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: inherit;
+    transition: all .3s;
+}
+.popup_isubmit:hover {
+    background-color: rgb(36,172,242);
+    border-color: rgb(36,172,242);
+    color: white;
+    cursor: pointer;
+}
+.error {
+    padding: 8px;
+    color: white;
+    background-color: tomato;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.disable {
+    display: none;
+}

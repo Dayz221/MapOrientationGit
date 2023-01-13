@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Карта{% endblock %}
+
+{% block headers %}
+    <link rel="stylesheet" href="{% static 'css/mapStyle.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="map"></div>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=b38685bc-76b8-4ea6-9cfb-81d03c5aad77" type="text/javascript"></script>
+    <script src="{% static 'js/mapScript.js' %}"></script>
+    <button id="exit_session" onclick="exit_session()">Выйти из группы</button>
+{% endblock %}
